@@ -5,3 +5,4 @@ Package:
 
 API:
 1. Get Barang = menampilkan semua barang yang ada di tabel barang;
+2. Store Barang
