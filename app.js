@@ -47,5 +47,28 @@ app.post("/store-barang", function (req, res) {
     }
   });
 });
+// 3. Get Barang by ID
+app.get("/get-barang-by-id", function (req, res) {
+  const param = req.query;
+  const id = param.id;
+  const queryStr = "SELECT * FROM barang WHERE id = ? AND deleted_at IS NULL";
+  const values = [id];
+  conn.query(queryStr, values, (err, results) => {
+    if (err) {
+      console.log(err);
+      res.status(500).json({
+        success: false,
+        message: "Gagal mencari barang berdasarkan Id",
+        data: null,
+      });
+    } else {
+      res.status(200).json({
+        success: true,
+        message: "Sukses mencari barang berdasarkan Id",
+        data: results,
+      });
+    }
+  });
+});
 
 app.listen(3000);

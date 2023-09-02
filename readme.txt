@@ -5,4 +5,6 @@ Package:
 
 API:
 1. Get Barang = menampilkan semua barang yang ada di tabel barang;
-2. Store Barang
+2. Store Barang = menambahkan barang
+3. Get Barang Id = menampilkan data barang (detail) berdasarkan Id yang dicari
+4.
